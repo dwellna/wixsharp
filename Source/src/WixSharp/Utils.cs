@@ -178,13 +178,32 @@ namespace WixSharp
 #if !NETCORE
                 name = (string)ExecuteInTempDomain<AsmReflector>(asmReflector => asmReflector.AssemblyScopeName(file));
 #else
-                throw new NotImplementedException("The method is not implemented on .NET Core");
+                return OriginalAssemblyFileCore(file);
 #endif
             }
             else
                 name = asm.ManifestModule.ScopeName;
 
             return IO.Path.Combine(dir, name);
+        }
+
+        internal static string OriginalAssemblyFileCore(string file)
+        {
+            var fullPath = Path.GetFullPath(file);
+            var dir = Path.GetDirectoryName(fullPath);
+        
+            using (var stream = File.OpenRead(fullPath))
+            using (var peReader = new PEReader(stream))
+            {
+                if (!peReader.HasMetadata)
+                    throw new BadImageFormatException("File does not contain metadata.");
+        
+                var metadataReader = peReader.GetMetadataReader();
+                var moduleDef = metadataReader.GetModuleDefinition();
+                var moduleName = metadataReader.GetString(moduleDef.Name);
+        
+                return Path.Combine(dir, moduleName);
+            }
         }
 
 #if NETCORE
