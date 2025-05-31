@@ -34,4 +34,4 @@ steps:
     command: 'push'
     packagesToPush: 'wixsharp/Source/src/NET-Core/WixSharp.Core/**/*.nupkg;!wixsharp/Source/src/NET-Core/WixSharp.Core/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: 'f3c4e05e-2b1d-4167-81af-db05a1e281fa/7ba73965-ab46-4ab2-b1c1-189a6cc0c8b9'
+    publishVstsFeed: 'd178332d-030b-4aee-a48a-027e5a2a2cdb/cdd3bd93-2a6f-4348-a15c-efb78fa6e931'
