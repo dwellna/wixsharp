@@ -1,9 +1,7 @@
 using System;
 
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Threading;
-using System.Windows.Forms;
 
 using WindowsInstaller;
 
@@ -623,5 +621,42 @@ namespace WixSharp.UI
         /// Occurs when some of the current instance property changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+    }
+
+    public enum DialogResult
+    {
+        //
+        // Summary:
+        //     Nothing is returned from the dialog box. This means that the modal dialog continues
+        //     running.
+        None,
+        //
+        // Summary:
+        //     The dialog box return value is OK (usually sent from a button labeled OK).
+        OK,
+        //
+        // Summary:
+        //     The dialog box return value is Cancel (usually sent from a button labeled Cancel).
+        Cancel,
+        //
+        // Summary:
+        //     The dialog box return value is Abort (usually sent from a button labeled Abort).
+        Abort,
+        //
+        // Summary:
+        //     The dialog box return value is Retry (usually sent from a button labeled Retry).
+        Retry,
+        //
+        // Summary:
+        //     The dialog box return value is Ignore (usually sent from a button labeled Ignore).
+        Ignore,
+        //
+        // Summary:
+        //     The dialog box return value is Yes (usually sent from a button labeled Yes).
+        Yes,
+        //
+        // Summary:
+        //     The dialog box return value is No (usually sent from a button labeled No).
+        No
     }
 }

@@ -2,9 +2,9 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <TargetFramework>net8.0-windows</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UseWindowsForms>true</UseWindowsForms>
+        <!--<UseWindowsForms>true</UseWindowsForms>-->
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <!--<PublishAot>true</PublishAot>-->
         <NoWarn>$(NoWarn);SYSLIB0003</NoWarn>

@@ -2,9 +2,9 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <TargetFramework>net8.0-windows</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UseWindowsForms>true</UseWindowsForms>
+        <!--<UseWindowsForms>true</UseWindowsForms>-->
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <!--<PublishAot>true</PublishAot>-->
         <RootNamespace>WixSharp</RootNamespace>
@@ -13,12 +13,12 @@
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <IncludeSymbols>True</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <FileVersion>2.2.0</FileVersion>
-        <AssemblyVersion>2.2.0</AssemblyVersion>
+        <FileVersion>2.8.0</FileVersion>
+        <AssemblyVersion>2.8.0</AssemblyVersion>
     </PropertyGroup>
 
     <PropertyGroup>
-    <PackageVersion>2.7.0</PackageVersion>
+    <PackageVersion>2.8.0</PackageVersion>
         <Title>WixSharp (.NET Core)</Title>
         <Description>.NET Core edition of WixSharp package</Description>
         <Copyright>Oleg Shilo</Copyright>
@@ -232,6 +232,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="System.Reflection.Metadata" Version="9.0.5" />
         <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.4" />
         <PackageReference Include="WixToolset.Mba.Core" Version="4.0.4" />
     </ItemGroup>

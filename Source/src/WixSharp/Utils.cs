@@ -24,15 +24,10 @@ THE SOFTWARE.
 #endregion Licence...
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Reflection.PortableExecutable;
 using WixSharp.CommonTasks;
-using WixToolset.Dtf.WindowsInstaller;
 using IO = System.IO;
-using Reflection = System.Reflection;
 
 #pragma warning disable IL3000 // Avoid accessing Assembly file path when publishing as a single file
 
@@ -189,10 +184,10 @@ namespace WixSharp
 
         internal static string OriginalAssemblyFileCore(string file)
         {
-            var fullPath = Path.GetFullPath(file);
-            var dir = Path.GetDirectoryName(fullPath);
+            var fullPath = System.IO.Path.GetFullPath(file);
+            var dir = System.IO.Path.GetDirectoryName(fullPath);
         
-            using (var stream = File.OpenRead(fullPath))
+            using (var stream = System.IO.File.OpenRead(fullPath))
             using (var peReader = new PEReader(stream))
             {
                 if (!peReader.HasMetadata)
@@ -202,7 +197,7 @@ namespace WixSharp
                 var moduleDef = metadataReader.GetModuleDefinition();
                 var moduleName = metadataReader.GetString(moduleDef.Name);
         
-                return Path.Combine(dir, moduleName);
+                return System.IO.Path.Combine(dir, moduleName);
             }
         }
 
