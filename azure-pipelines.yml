@@ -1,0 +1,37 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - wixsharp/*
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetAuthenticate@1
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(5c79be4c-1097-400f-9d9e-d0175b1e31a5)'
+    command: 'restore'
+    projects: 'wixsharp/Source/src/NET-Core/WixSharp.Core/WixSharp.Core.csproj'
+    feedsToUse: 'select'
+- script: dotnet build wixsharp/Source/src/NET-Core/WixSharp.Core/WixSharp.Core.csproj --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(5c79be4c-1097-400f-9d9e-d0175b1e31a5)'
+    command: 'push'
+    packagesToPush: 'wixsharp/Source/src/NET-Core/WixSharp.Core/**/*.nupkg;!wixsharp/Source/src/NET-Core/WixSharp.Core/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'f3c4e05e-2b1d-4167-81af-db05a1e281fa/7ba73965-ab46-4ab2-b1c1-189a6cc0c8b9'
