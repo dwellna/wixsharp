@@ -30,7 +30,7 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    azureSubscription: 'Pay-As-You-Go(5c79be4c-1097-400f-9d9e-d0175b1e31a5)'
+    azureSubscription: 'Pay-As-You-Go(2)(5c79be4c-1097-400f-9d9e-d0175b1e31a5)'
     command: 'push'
     packagesToPush: 'wixsharp/Source/src/NET-Core/WixSharp.Core/**/*.nupkg;!wixsharp/Source/src/NET-Core/WixSharp.Core/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
