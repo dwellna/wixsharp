@@ -12,7 +12,7 @@ trigger:
       - wixsharp/*
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-2022
 
 variables:
   buildConfiguration: 'Release'
