@@ -2,9 +2,9 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net8.0-windows</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <!--<UseWindowsForms>true</UseWindowsForms>-->
+        <UseWindowsForms>true</UseWindowsForms>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <!--<PublishAot>true</PublishAot>-->
         <RootNamespace>WixSharp</RootNamespace>
@@ -232,7 +232,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.Reflection.Metadata" Version="9.0.5" />
+        <!--<PackageReference Include="System.Reflection.Metadata" Version="9.0.5" />-->
         <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.4" />
         <PackageReference Include="WixToolset.Mba.Core" Version="4.0.4" />
     </ItemGroup>

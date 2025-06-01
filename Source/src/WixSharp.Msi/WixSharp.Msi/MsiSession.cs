@@ -2,7 +2,6 @@ using System;
 
 using System.ComponentModel;
 using System.Threading;
-
 using WindowsInstaller;
 
 #pragma warning disable CS8981

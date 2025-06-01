@@ -25,6 +25,7 @@ THE SOFTWARE.
 
 using System;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
 using WixSharp.CommonTasks;
 using IO = System.IO;
