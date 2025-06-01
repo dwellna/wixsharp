@@ -9,7 +9,7 @@ trigger:
       - master
   paths:
     include:
-      - wixsharp/*
+      - Source/src/*
 
 pool:
   vmImage: windows-2022
