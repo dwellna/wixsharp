@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
@@ -8,6 +8,8 @@
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <!--<PublishAot>true</PublishAot>-->
         <RootNamespace>WixSharp</RootNamespace>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\..\WixSharp\WixSharpStrongName.snk</AssemblyOriginatorKeyFile>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <IncludeSymbols>True</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>

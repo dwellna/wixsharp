@@ -13,6 +13,8 @@
     <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">-->
     <PropertyGroup>
         <DefineConstants>$(DefineConstants);CSS_PROJECT;WIXSHARP_MSI</DefineConstants>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\..\WixSharp.Msi\WixSharp.Msi\WixSharpStrongName.snk</AssemblyOriginatorKeyFile>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <IncludeSymbols>True</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
